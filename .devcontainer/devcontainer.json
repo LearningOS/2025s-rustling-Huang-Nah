@@ -1,17 +1,18 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
-  "waitFor": "onCreateCommand",
-  "onCreateCommand": ".devcontainer/setup.sh",
-  "updateContentCommand": "cargo build",
-  "postCreateCommand": "",
-  "postAttachCommand": {
-    "server": "rustlings watch"
-  },
+  "name": "Rust Dev with Docker",
+  "dockerComposeFile": "dockerfile/Ubuntu_22/docker-compose.yml",
+  "service": "rust-dev",
+  "workspaceFolder": "/usr/src/app",
   "customizations": {
     "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
       "extensions": [
-        "rust-lang.rust-analyzer"
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb"
       ]
     }
-  }
+  },
+  "postCreateCommand": "cargo build"
 }
