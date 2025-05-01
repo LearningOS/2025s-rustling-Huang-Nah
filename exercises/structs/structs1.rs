@@ -45,7 +45,6 @@ mod tests {
         assert_eq!(green.0, 0);
         assert_eq!(green.1, 255);
         assert_eq!(green.2, 0);
-        ass
     }
     
 
